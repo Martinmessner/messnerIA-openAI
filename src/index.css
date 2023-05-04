@@ -5,6 +5,10 @@
 
 .contenedor-main {
   text-align: center;
+}
+
+.contenedor-main > h3 {
+  text-align: center;
   padding-top: 2em;
 }
 
@@ -40,8 +44,8 @@
   }
 
 .data-transition:not(:empty) {
-    display: inline-block; /* hacemos visible la burbuja cuando hay texto */
-    }
+  display: inline-block; /* hacemos visible la burbuja cuando hay texto */
+}
   
   .data-transition::before {
   border-style: solid;
@@ -52,7 +56,7 @@
   left: -10px;
   position: absolute;
   bottom: 10px;
-  }
+ }
   
   .data-transition::after {
   border-style: solid;
