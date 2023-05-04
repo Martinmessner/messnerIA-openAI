@@ -32,7 +32,8 @@ export default function Main() {
     
     return (
       <main className="contenedor-main">
-        <h1> Pregunta lo que quieras.</h1>
+        <h1>ChatGPT Express</h1>
+        <h3> Pregunta lo que quieras.</h3>
         <form className="contenedor-form" onSubmit={handleSubmit}>
           <input
             type="text"
