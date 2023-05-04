@@ -1,0 +1,66 @@
+:root {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+.contenedor-main {
+  text-align: center;
+  padding-top: 2em;
+}
+
+.contenedor-form {
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-data {
+  min-width: 4em;
+  margin:auto;
+}
+
+.contenedor-form input {
+  padding: 10px;
+}
+
+.contenedor-button {
+  cursor: pointer;
+}
+
+.data-transition {
+  background-color: #F5F5F5;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: none;
+  max-width: 70%;
+  padding: 10px;
+  position: relative;
+  white-space: break-spaces;
+  font-size: 1.2em;
+  }
+
+.data-transition:not(:empty) {
+    display: inline-block; /* hacemos visible la burbuja cuando hay texto */
+    }
+  
+  .data-transition::before {
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent #F5F5F5;
+  content: "";
+  display: inline-block;
+  left: -10px;
+  position: absolute;
+  bottom: 10px;
+  }
+  
+  .data-transition::after {
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent rgba(0, 0, 0, 0.1);
+  content: "";
+  display: inline-block;
+  left: -8px;
+  position: absolute;
+  bottom: 8px;
+  }
