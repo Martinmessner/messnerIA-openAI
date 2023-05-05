@@ -46,16 +46,23 @@ export default function Main() {
             value={messages}
             placeholder="Escribe aqui..."
           ></input>
-          <button className="contenedor-button" type="submit" onClick={getMessages}>
+          <button
+            className="contenedor-button"
+            type="submit"
+            onClick={getMessages}
+            disabled={loading}
+          >
             Buscar
           </button>
         </form>
-          {error && <p>{error}</p>}
+        {error && <p>{error}</p>}
         {loading ? (
           <p>Cargando...</p>
         ) : (
           <div className="contenedor-data">
-            <p className="data-transition">{data.length > 0 && data[0].content}</p>
+            <p className="data-transition">
+              {data.length > 0 && data[0].content}
+            </p>
           </div>
         )}
       </main>
