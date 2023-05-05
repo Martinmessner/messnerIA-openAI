@@ -63,6 +63,9 @@ export default function Main() {
             <p className="data-transition">
               {data.length > 0 && data[0].content}
             </p>
+            <h2 className="data-respuesta-texto">
+              {data.length > 0 ? 'Espero haberte ayudado. ' : false}
+            </h2>
           </div>
         )}
       </main>
