@@ -60,12 +60,14 @@ export default function Main() {
           <p>Cargando...</p>
         ) : (
           <div className="contenedor-data">
-            <p className="data-transition">
-              {data.length > 0 && data[0].content}
-            </p>
-            <h2 className="data-respuesta-texto">
-              {data.length > 0 ? 'Espero haberte ayudado. ' : false}
-            </h2>
+            {data.length > 0 && (
+              <>
+                <p className="data-transition">{data[0].content}</p>
+                <h2 className="data-respuesta-texto">
+                  Espero haberte ayudado.
+                </h2>
+              </>
+            )}
           </div>
         )}
       </main>
