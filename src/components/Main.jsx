@@ -3,32 +3,37 @@ import GetDatafromApi from "./Api"
 
 export default function Main() {
 
-    const [data, Setdata] = useState([])
-    const [messages, Setmessages] = useState("")
-    const [loading, Setloading] = useState(false)
+    const [data, Setdata] = useState([]);
+    const [messages, Setmessages] = useState("");
+    const [loading, Setloading] = useState(false);
+    const [error, Seterror] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         Setmessages((prevMessages) => [...prevMessages, {type: "user", messages: data}] )
-
         Setmessages("")
     }
-
-    const getMessages = async() => { 
-        Setloading(true)
+    const getMessages = async () => {
+      if (messages.trim() !== "") {
+        Setloading(true);
         try {
-            const message = await GetDatafromApi(messages);
-            Setdata([message]);
-            Setmessages((prevMessages) => [
-              ...prevMessages,
-              { type: "assistant", message: message },
-            ]);
-            Setmessages('');
-            Setloading(false);
-          } catch (error) {
-            console.log(error);
-          }
-    }
+          const message = await GetDatafromApi(messages);
+          Setdata([message]);
+          Setmessages((prevMessages) => [
+            ...prevMessages,
+            { type: "assistant", message: message },
+          ]);
+          Setmessages("");
+          Setloading(false);
+          Seterror("");
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        Seterror("No puede ingresar un campo vacio.");
+      }
+    };
+  
     
     return (
       <main className="contenedor-main">
@@ -45,6 +50,7 @@ export default function Main() {
             Buscar
           </button>
         </form>
+          {error && <p>{error}</p>}
         {loading ? (
           <p>Cargando...</p>
         ) : (
