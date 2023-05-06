@@ -2,7 +2,6 @@ import { useState } from "react"
 import GetDatafromApi from "./Api"
 
 export default function Main() {
-
     const [data, Setdata] = useState([]);
     const [messages, Setmessages] = useState("");
     const [loading, Setloading] = useState(false);
